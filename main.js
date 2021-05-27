@@ -2,11 +2,12 @@ const container = document.querySelector('.box-container');
 const boxes = document.querySelectorAll('.box-container .row .column');
 const body = document.querySelector('body');
 const reset = document.querySelector('.reset button')
+let player = 0;
 
 function showMessage(message) {
     const alertBox = document.createElement('div');
     alertBox.className = 'message';
-    alertBox.append(document.createTextNode(`You ${message}`))
+    alertBox.append(document.createTextNode(`${message}`))
     body.insertBefore(alertBox, container);
 
 
@@ -19,51 +20,87 @@ function showMessage(message) {
 
 }
 
-function drawOnBoard(el) {
+function drawOnBoard(el, icon) {
     el.classList.add('fab');
-    el.classList.add('fa-opera');
+    el.classList.add(`fa-${icon}`);
 }
 
 
 function checkWinner() {
     //check for rows
     if (boxes[0].classList.contains('fa-opera') && boxes[1].classList.contains('fa-opera') && boxes[2].classList.contains('fa-opera')) {
-        showMessage("Win");
+        showMessage("Red Win");
     }
     else if (boxes[3].classList.contains('fa-opera') && boxes[4].classList.contains('fa-opera') && boxes[5].classList.contains('fa-opera')) {
-        showMessage("Win");
+        showMessage("Red Win");
     }
     else if (boxes[6].classList.contains('fa-opera') && boxes[7].classList.contains('fa-opera') && boxes[8].classList.contains('fa-opera')) {
-        showMessage("Win");
+        showMessage("Red Win");
     }
+    if (boxes[0].classList.contains('fa-xbox') && boxes[1].classList.contains('fa-xbox') && boxes[2].classList.contains('fa-xbox')) {
+        showMessage("Green Win");
+    }
+    else if (boxes[3].classList.contains('fa-xbox') && boxes[4].classList.contains('fa-xbox') && boxes[5].classList.contains('fa-xbox')) {
+        showMessage("Green Win");
+    }
+    else if (boxes[6].classList.contains('fa-xbox') && boxes[7].classList.contains('fa-xbox') && boxes[8].classList.contains('fa-xbox')) {
+        showMessage("Green Win");
+    }
+
+
     //check for columns
+
     else if (boxes[0].classList.contains('fa-opera') && boxes[3].classList.contains('fa-opera') && boxes[6].classList.contains('fa-opera')) {
-        showMessage("Win");
+        showMessage("Red Win");
     }
     else if (boxes[1].classList.contains('fa-opera') && boxes[4].classList.contains('fa-opera') && boxes[7].classList.contains('fa-opera')) {
-        showMessage("Win");
+        showMessage("Red Win");
     }
     else if (boxes[2].classList.contains('fa-opera') && boxes[5].classList.contains('fa-opera') && boxes[8].classList.contains('fa-opera')) {
-        showMessage("Win");
+        showMessage("Red Win");
+    }
+
+    else if (boxes[0].classList.contains('fa-xbox') && boxes[3].classList.contains('fa-xbox') && boxes[6].classList.contains('fa-xbox')) {
+        showMessage("Green Win");
+    }
+    else if (boxes[1].classList.contains('fa-xbox') && boxes[4].classList.contains('fa-xbox') && boxes[7].classList.contains('fa-xbox')) {
+        showMessage("Green Win");
+    }
+    else if (boxes[2].classList.contains('fa-xbox') && boxes[5].classList.contains('fa-xbox') && boxes[8].classList.contains('fa-xbox')) {
+        showMessage("Green Win");
     }
     //check for diagonals
     else if (boxes[0].classList.contains('fa-opera') && boxes[4].classList.contains('fa-opera') && boxes[8].classList.contains('fa-opera')) {
-        showMessage("Win");
+        showMessage("Red Win");
     }
     else if (boxes[2].classList.contains('fa-opera') && boxes[4].classList.contains('fa-opera') && boxes[6].classList.contains('fa-opera')) {
-        showMessage("Win");
+        showMessage("Red Win");
+    }
+    else if (boxes[0].classList.contains('fa-xbox') && boxes[4].classList.contains('fa-xbox') && boxes[8].classList.contains('fa-xbox')) {
+        showMessage("Green Win");
+    }
+    else if (boxes[2].classList.contains('fa-xbox') && boxes[4].classList.contains('fa-xbox') && boxes[6].classList.contains('fa-xbox')) {
+        showMessage("Green Win");
     }
 
 }
 
 container.onclick = (e) => {
-
-    if (!e.target.classList.contains('fab') && !e.target.classList.contains('fa-opera') && e.target.classList.contains('column')) {
-        console.log(e.target);
-        drawOnBoard(e.target);
+    if (player === 0) {
+        if (!e.target.classList.contains('fab') && !e.target.classList.contains('fa-opera') && e.target.classList.contains('column')) {
+            drawOnBoard(e.target, 'opera');
+            player = 1;
+        }
+        checkWinner();
+    }
+    else if (player === 1) {
+        if (!e.target.classList.contains('fab') && !e.target.classList.contains('fa-opera') && e.target.classList.contains('column')) {
+            drawOnBoard(e.target, 'xbox');
+            player = 0;
+        }
+        checkWinner();
 
     }
-    checkWinner();
 
 }
 
