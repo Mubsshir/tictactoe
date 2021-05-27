@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: aliceblue;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+.header h1 {
+  box-shadow: 0 20px 10px rgb(221, 32, 25);
+  padding: 10px;
+}
+.header h1:hover {
+  cursor: pointer;
+  transform: rotateZ(6deg);
+  transform: rotateX(-10deg);
+  transform: scale(1.2);
+  box-shadow: 0 0px 10px rgb(32, 221, 25);
+}
+.box-container {
+  margin-top: 50px;
+  display: flex;
+  flex-flow: column wrap;
+  height: 350px;
+  width: 350px;
+  background-color: rgb(234, 226, 241);
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 10px rgb(14, 198, 223);
+}
+
+.box-container .row {
+  display: flex;
+  justify-content: space-between;
+  width: 99%;
+  height: 32%;
+  margin: 2px;
+  padding: 10px;
+}
+.box-container .row .column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  width: 33.33%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  box-shadow: 0 10px 8px 1px rgb(247, 19, 159);
+}
+.fab.fa-opera {
+  font-size: 50px;
+  color: rgb(250, 0, 0);
+}
+.fab.fa-xbox {
+  font-size: 50px;
+  color: green;
+}
+.box-container .row .column:hover {
+  box-shadow: 0 5px 8px 9px rgb(77, 106, 233);
+}
+.message {
+  height: 50px;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 35px;
+  box-shadow: 0 10px 8px 1px rgb(73, 221, 14);
+  color: green;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.reset button {
+  margin-top: 20px;
+  box-shadow: 0 20px 20px rgb(29, 29, 29);
+  padding: 10px;
+  border: none;
+  background-color: cyan;
+}
+.reset button:hover {
+  cursor: pointer;
+  transform: rotateZ(6deg);
+  transform: rotateX(-10deg);
+  transform: scale(1.2);
+  box-shadow: 0 0px 10px rgb(32, 221, 25);
+}
