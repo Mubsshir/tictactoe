@@ -16,10 +16,11 @@ function showMessage(message, icon) {
         alertBox.remove();
         boxes.forEach((box) => {
             box.className = 'column';
+            win = 1;
+            count = 0;
         })
     }, 2000);
-    win = 1;
-    count = 0;
+
 }
 
 function drawOnBoard(el, icon) {
@@ -128,6 +129,7 @@ container.onclick = (e) => {
         showMessage('Draw', 'draw');
         count = 0;
     }
+    console.log(count);
 }
 
 
