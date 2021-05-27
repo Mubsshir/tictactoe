@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap");
 * {
   margin: 0;
   box-sizing: border-box;
@@ -12,6 +13,7 @@ body {
 .header h1 {
   box-shadow: 0 20px 10px rgb(221, 32, 25);
   padding: 10px;
+  font-family: "ZCOOL KuaiLe", cursive;
 }
 .header h1:hover {
   cursor: pointer;
@@ -63,7 +65,22 @@ body {
 .box-container .row .column:hover {
   box-shadow: 0 5px 8px 9px rgb(77, 106, 233);
 }
-.message {
+.message.draw {
+  height: 50px;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 35px;
+  box-shadow: 0 10px 8px 1px rgb(12, 128, 206);
+  color: rgb(15, 121, 107);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+  font-family: "ZCOOL KuaiLe", cursive;
+}
+.message.xbox {
   height: 50px;
   width: 200px;
   background-color: rgb(255, 255, 255);
@@ -76,19 +93,48 @@ body {
   justify-content: center;
   font-weight: 600;
   font-size: 24px;
+  font-family: "ZCOOL KuaiLe", cursive;
+}
+.message.opera {
+  height: 50px;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 35px;
+  box-shadow: 0 10px 8px 1px rgb(233, 35, 9);
+  color: rgb(211, 7, 7);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+  font-family: "ZCOOL KuaiLe", cursive;
 }
 
 .reset button {
-  margin-top: 20px;
-  box-shadow: 0 20px 20px rgb(29, 29, 29);
+  margin-top: 40px;
+  box-shadow: 0 10px 20px 1px rgb(235, 137, 10);
   padding: 10px;
   border: none;
-  background-color: cyan;
+  color: red;
+  font-size: 20px;
+  font-family: "ZCOOL KuaiLe", cursive;
 }
 .reset button:hover {
   cursor: pointer;
   transform: rotateZ(6deg);
   transform: rotateX(-10deg);
   transform: scale(1.2);
-  box-shadow: 0 0px 10px rgb(32, 221, 25);
+  box-shadow: 0 5px 10px 1px rgb(25, 182, 221);
+  background-color: black;
+}
+
+.fab.fa-opera.win {
+  font-size: 25px;
+  color: rgb(250, 0, 0);
+  margin-right: 5px;
+}
+.fab.fa-xbox.win {
+  font-size: 25px;
+  margin-right: 5px;
 }
