@@ -1,12 +1,14 @@
-const container = document.querySelector('.box-container');
-const boxes = document.querySelectorAll('.box-container .row .column');
+const container = document.querySelector('.box-container');    //Get the box table from DOM
+const boxes = document.querySelectorAll('.box-container .row .column'); //get the all 9 boxes
+const reset = document.querySelector('.reset button');// get reset button
+const play = document.querySelector('.playBtn');//get play button
 const body = document.querySelector('body');
-const reset = document.querySelector('.reset button');
-const play = document.querySelector('.playBtn');
-let player = 0;
-let count = 0;
+let player = 0; //create a player variable for change the player by changing values to 0 to 1 and 1 to 0
+let count = 0; //counting both players turn till 9
 var win = 0;
 
+
+//display message if we get a winner or match tie
 function showMessage(message, icon) {
     const alertBox = document.createElement('div');
     alertBox.className = `message ${icon}`;
@@ -24,12 +26,13 @@ function showMessage(message, icon) {
 
 }
 
+// draw o and x on bord
 function drawOnBoard(el, icon) {
     el.classList.add('fab');
     el.classList.add(`fa-${icon}`);
 }
 
-
+//check for winner  
 function checkWinner() {
     //check for rows
     if (boxes[0].classList.contains('fa-opera') && boxes[1].classList.contains('fa-opera') && boxes[2].classList.contains('fa-opera')) {
@@ -106,13 +109,13 @@ function checkWinner() {
 }
 
 container.onclick = (e) => {
-    checkWinner();
     if (player === 0) {
         if (!e.target.classList.contains('fab') && !e.target.classList.contains('fa-opera') && e.target.classList.contains('column')) {
             drawOnBoard(e.target, 'opera');
             player = 1;
             count++;
         }
+        checkWinner();
     }
     else if (player === 1) {
 
@@ -121,10 +124,11 @@ container.onclick = (e) => {
             player = 0;
             count++;
         }
+        checkWinner();
 
     }
     if (count === 9 && win === 0) {
-        showMessage('Draw', 'draw');
+        showMessage('Tie', 'draw');
         count = 0;
     }
     console.log(count);
