@@ -21,6 +21,25 @@ body {
   transform: rotateX(-10deg);
   transform: scale(1.2);
   box-shadow: 0 0px 10px rgb(32, 221, 25);
+  font-size: 20px;
+}
+
+.playBtn {
+  margin-top: 130px;
+  box-shadow: 0 20px 10px rgb(25, 110, 221);
+  padding: 10px;
+  font-family: "ZCOOL KuaiLe", cursive;
+  font-size: 25px;
+  color: rgb(0, 14, 143);
+}
+.playBtn:hover {
+  cursor: pointer;
+  transform: rotateZ(6deg);
+  transform: rotateX(-10deg);
+  transform: scale(1.2);
+  box-shadow: 0 0px 10px rgb(32, 221, 25);
+  font-size: 20px;
+  text-transform: uppercase;
 }
 .box-container {
   margin-top: 50px;
@@ -33,6 +52,7 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 20px 10px rgb(14, 198, 223);
+  display: none;
 }
 
 .box-container .row {
@@ -119,6 +139,7 @@ body {
   color: red;
   font-size: 20px;
   font-family: "ZCOOL KuaiLe", cursive;
+  display: none;
 }
 .reset button:hover {
   cursor: pointer;

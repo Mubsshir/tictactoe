@@ -2,6 +2,7 @@ const container = document.querySelector('.box-container');
 const boxes = document.querySelectorAll('.box-container .row .column');
 const body = document.querySelector('body');
 const reset = document.querySelector('.reset button');
+const play = document.querySelector('.playBtn');
 let player = 0;
 let count = 0;
 var win = 0;
@@ -105,15 +106,13 @@ function checkWinner() {
 }
 
 container.onclick = (e) => {
-
-
+    checkWinner();
     if (player === 0) {
         if (!e.target.classList.contains('fab') && !e.target.classList.contains('fa-opera') && e.target.classList.contains('column')) {
             drawOnBoard(e.target, 'opera');
             player = 1;
             count++;
         }
-        checkWinner();
     }
     else if (player === 1) {
 
@@ -122,10 +121,9 @@ container.onclick = (e) => {
             player = 0;
             count++;
         }
-        checkWinner();
 
     }
-    if (count == 9 && win == 0) {
+    if (count === 9 && win === 0) {
         showMessage('Draw', 'draw');
         count = 0;
     }
@@ -142,3 +140,10 @@ reset.onclick = (e) => {
     win = 0;
 }
 
+play.onclick = (e) => {
+    play.style.display = 'none';
+    container.style.display = 'block';
+    reset.style.display = 'block';
+    console.log("object");
+
+}
