@@ -1,0 +1,67 @@
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(45, 93, 223);
+  padding: 10px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgb(45, 93, 223);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.board .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 33.33%;
+  margin: 1px;
+}
+
+.board .column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33.33%;
+  height: 100%;
+  margin: 1px;
+  font-size: 35px;
+  color: rgb(45, 93, 223);
+  font-weight: bolder;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+  background-color: white;
+}
+
+.board .column:hover {
+  background-color: rgb(45, 93, 223);
+  color: rgb(255, 255, 255);
+}
+
+.playerLabel {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.playerLabel h3 {
+  padding: 10px 0;
+}
+.player {
+  color: rgb(45, 93, 223);
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 5px solid rgb(45, 93, 223);
+}
+
+@media screen and (max-width: 768px) {
+  .board {
+    padding: 0;
+    width: 300px;
+    height: 300px;
+  }
+}

@@ -1,0 +1,10 @@
+.box {
+  width: 100vw;
+  height: 50px;
+  background-color: greenyellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 900;
+}
