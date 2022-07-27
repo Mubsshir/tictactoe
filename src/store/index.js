@@ -18,6 +18,8 @@ const boardSlice = createSlice({
         },
         reset(state) {
             state.boardInitial = [null, null, null, null, null, null, null, null, null]
+            state.PlayerIsX = true;
+            state.count = 0;
         },
         changePlayer(state) {
             state.PlayerIsX = !state.PlayerIsX
