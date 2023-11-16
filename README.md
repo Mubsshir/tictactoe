@@ -1,4 +1,4 @@
-Open [Netlify](https://khanreactic.netlify.app) to view it in your browser.
+Open [Netlify](https://kreacttic.netlify.app/) to view it in your browser.
 
 # Getting Started with Create React App
 
